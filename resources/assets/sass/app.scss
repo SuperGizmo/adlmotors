@@ -1,0 +1,166 @@
+$blue: #014590;
+$transparentBlack: rgba(0, 0, 0, 0.5);
+$yellow: #f0e900;
+
+.blueBar{
+  background-color: $blue;
+  color: #fff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.topBar{
+  padding-top: 70px;
+  font-size: 30pt;
+  color: #fff;
+  background: $transparentBlack;
+}
+
+.mainContent{
+  background: $transparentBlack;
+  color: #fff;
+  h1{
+    text-decoration:underline;
+  }
+}
+.form-control{
+  color: #000;
+}
+
+.graident
+{
+  width: 100%;
+  margin: 0 auto;
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.02) 1%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%); 
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.02) 1%,rgba(0,0,0,1) 50%,rgba(0,0,0,1) 100%);
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.02) 1%,rgba(0,0,0,1) 50%,rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+}
+
+
+$border-radius-base:        0px;
+$border-radius-large:       0px;
+$border-radius-small:       0px;
+
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+
+#slideshow {
+  padding:0px;
+  margin:0px;
+  position:relative;
+  z-index:-1;
+}
+
+#slideshow IMG {
+  padding:0px;
+  margin:0px;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:8;
+  opacity:0.0;
+}
+
+#slideshow IMG.active {
+  padding:0px;
+  margin:0px;
+  z-index:10;
+  opacity:1.0;
+}
+
+#slideshow IMG.last-active {
+  padding:0px;
+  margin:0px;
+  z-index:9;
+}
+
+#slideshow img {
+  padding:0px;
+  margin:0px;
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+$bgDefault      : #f0e900;
+$bgHighlight    : #014590;
+$colDefault     : #000000;
+$colHighlight   : #ffffff;
+$dropDown       : true;
+
+.navbar-inverse {
+  background-color: $bgDefault;
+  border-color: $bgDefault;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $bgHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        border-left: solid 1px $bgHighlight; 
+        border-right: solid 1px $bgHighlight; 
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $bgHighlight; }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefault;
+          > li {
+            > a {
+              color: $colDefault;
+              &:hover,  &:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+            > .divider {
+              background-color: $bgHighlight;}}}}}
+    @if $dropDown {
+      .open .dropdown-menu > .active {
+        > a, > a:hover, > a:focus {
+          color: $colHighlight;
+          background-color: $bgHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
